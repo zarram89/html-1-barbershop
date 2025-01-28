@@ -181,4 +181,10 @@ html {
 body {
   margin: 0;
   display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.main-container {
+  flex-grow: 1;
 }
