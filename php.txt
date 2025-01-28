@@ -1,0 +1,18 @@
+// class Person {
+//   public $name;
+//   public $age;
+
+//   public function breate() {
+//     echo $this->name . " is breathing";
+//   }
+// }
+
+// $person = new Person();
+
+// $person->name = "John Doe";
+// $person->age = 25;
+
+// dd($person->breate());
+
+
+https://bobbyhadz.com/blog/vscode-view-query-sqlite
