@@ -11,6 +11,15 @@
 HTML-коды популярных эмодзи - https://htmlacademy.ru/blog/html/emoji
 Специальные символы в HTML - https://htmlacademy.ru/blog/html/special
 
+  <head>
+    <meta charset="utf-8">
+    <title>Главная страница</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/styles.css">
+  </head>
+
 Скриншоты
 Win11
 PrtSc - скриншот
@@ -128,14 +137,7 @@ https://squoosh.app/
   display: block;
 }
 
-  <head>
-    <meta charset="utf-8">
-    <title>Главная страница</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles/styles.css">
-  </head>
+
 
 
 Сортировка четкбоксом
@@ -207,3 +209,137 @@ img {
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
+
+Основные атрибуты, которые характерны для ссылок:
+
+href="#" — собственно ссылка (на внешнюю страницу или якорь);
+target="_blank" — цель, в этом значении — открытие в новом окне;
+download — скачивание файла, на который ведёт ссылка;
+rel="nofollow" — ссылка ведёт на материал, с которым поисковые роботы не должны ассоциировать ваш сайт. Комментарий Google по этому поводу;
+lang="fr" — по ссылке контент на французском языке. Коды языков: IANA Language Subtag Registry;
+hreflang="de" — означает, что по ссылке — дубликат страницы на немецком. Комментарий Google по этому поводу;
+type="text/html" — указывает на MIME-тип материала по ссылке. Список MIME-типов.
+
+a[href*="css"]       /* Применится к ссылкам, в URL которых есть сочетание букв css */
+a[href^="https://"]  /* Применится к ссылкам, которые начинаются с https:// */
+a[href$=".jpeg"]     /* Применится к ссылкам, которые заканчиваются на .jpeg */
+a[type="image/jpeg"] /* Применится к ссылкам, которые помечены атрибутом type как jpeg или jpg */
+
+a[href^="tel:"] {
+  font-size: 16px;
+  line-height: 32px;
+  text-decoration: none;
+  color: #000000;
+}
+
+a[href^="mailto:"] {
+  font-size: 16px;
+  line-height: 32px;
+  color: #000000;
+}
+
+Порядок
+
+a { color: red; }
+a:visited { color: grey; }
+a:hover { color: blue; }
+a:active { background-color: yellow; }
+
+Фокус выносим
+a:focus { color: yellow;}
+
+Стили к плейсхолдеру, если он указан в input
+<input name="name" type="email" placeholder="example@example.com">
+
+input:placeholder-shown {
+    background-color: #FFEB3B;
+    border: 2px solid #D28100;
+    border-radius: 5px;
+}
+
+Стили для input где введен текст
+
+input:not(:placeholder-shown) {
+    background-color: #F2E1F5;
+}
+
+FOCUS, FOCUS-VISIBLE
+-Прописываем значение для состояния :focus
+-Проверяем, что поддерживается состояние :focus-visible
+-Если поддерживаем, то отменяем значение для :focus
+-Задаём значение для :focus-visible
+
+1.Способ с переопределением :focus
+/* Указываем значение для браузеров по умолчанию */
+button:focus {
+  outline: 2px solid #7691F8;
+}
+
+/* Для браузеров, которые поддерживают :focus-visible отключаем поведение :focus*/
+button:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Прописываем поведение для :focus-visible */
+button:focus-visible {
+  outline: 3px solid #7691F8;
+
+
+2.Подход прогрессивного улучшения через директиву @supports
+
+/* Указываем значение для браузеров по умолчанию */
+button:focus {
+  outline: 2px solid #7691F8;
+}
+
+/* Проверяем поддержку свойства :focus-visible, если поддерживаем, то проваливаемся внутрь директивы */
+@supports selector(:focus-visible) {
+
+  /* Убираем фокус у элементов */
+  button:focus {
+    outline: none;
+  }
+
+  /* Задаём видимый фокус у элементов */
+  button:focus-visible {
+    outline: 3px solid #7691F8;
+  }
+}
+
+
+3.Подход изящной деградации через директиву @supports и функцию selector()
+
+/*  Указываем :focus-visible */
+button:focus-visible {
+  outline: 3px solid #7691F8;
+  outline-offset: 3px;
+}
+
+/*  Проверяем поддержку :focus-visible, если НЕ поддерживаем, то проваливаемся внутрь директивы и прописываем :focus */
+@supports not selector(:focus-visible) {
+  button:focus {
+    /* Fallback for browsers without :focus-visible support */
+    outline: 3px solid #7691F8;
+    outline-offset: 3px;
+  }
+}
+
+SVG необходимые атрибуты
+width="16"
+height="16"
+viewBox="0 0 16 16" (не удаляем viewBox в оптимизаторах)
+aria-hidden="true" - чтобы не читала читалка
+focusable="false" - чтобы таб не фокусировался
+
+для path внутри svg укажем
+fill="red" - для заполнения
+stroke="blue" - для обрамления
+
+
+Как вставить SVG
+Иконка — растр:
+  вставляем как фоновое изображение и обращаемся к дизайнеру за SVG
+Если иконка векторная, то определяемся с тем какую функцию выполняет изображение и     выбираем один из вариантов:
+  Если изображение является контеным — <img>
+  Если изображение меняет состояния — инлайн-свг в разметку
+  Если выполняет декоративную роль — вставляем свг фоном в CSS
