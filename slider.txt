@@ -1,251 +1,165 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-  <meta charset="utf-8">
-  <title>Главная страница</title>
-  <link rel="stylesheet" href="styles/styles.css">
-</head>
-<body>
-<!-- Шапка -->
-<header class="page-header">
-  <nav class="navigation">
-    <ul class="navigation-list">
-      <li class="navigation-item">
-        <a class="navigation-link" href="about.html">О нас</a>
-      </li>
-      <li class="navigation-item">
-        <a class="navigation-link" href="catalog.html">Каталог</a>
-      </li>
-      <li class="navigation-item">
-        <a class="navigation-link" href="faq.html">Частые вопросы</a>
-      </li>
-    </ul>
-    <ul class="navigation-list navigation-user">
-      <li class="navigation-item">
-        <a class="navigation-link" href="#">
-          <svg class="navigation-icon" aria-hidden="true" focusable="false" width="16" height="16" xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M11 6.5a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0zm-.665 5.249a6.5 6.5 0 111.414-1.414l3.958 3.958-1.414 1.414-3.958-3.958z" />
-          </svg>
-          <span class="visually-hidden">Поиск</span>
-        </a>
-      </li>
-      <li class="navigation-item">
-        <a class="navigation-link" href="#">
-          <svg class="navigation-icon" aria-hidden="true" focusable="false" width="16" height="16" xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M3.09 6L3.577.905 3.662 0h8.676l.086.905L12.909 6h2.724l-.14 1.124-1 8-.11.876H1.617l-.11-.876-1-8L.368 6H3.09zM5.1 6h5.8l-.38-4H5.48L5.1 6zm-1.717 8l-.75-6h10.734l-.75 6H3.383zM8.5 9.5v3h2v-3h-2zm-3 3v-3h2v3h-2z" />
-          </svg>
-          <span class="visually-hidden">Корзина</span>
-        </a>
-      </li>
-      <li class="navigation-item">
-        <a class="navigation-link navigation-link-login" href="#">
-          <svg class="navigation-icon" width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M9 2h5v12H9v2h7V0H9v2zM4.293 3.707L7.536 6.95H0v2h7.536l-3.243 3.242 1.414 1.415 4.95-4.95.707-.707-.707-.707-4.95-4.95-1.414 1.414z" fill="#BDBDBD" />
-          </svg>
-          Вход
-        </a>
-      </li>
-    </ul>
-  </nav>
-</header>
+    <meta charset="utf-8">
+    <title>Главная страница</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/styles.css">
 
-<main class="main-container main-index">
-  <div class="page-container">
-    <!--Главный заголовок -->
-    <h1 class="visually-hidden">Барбершоп «Бородинский»</h1>
-
-    <!-- Лого -->
-    <img class="logo" src="images/logo-full.svg" width="367" height="152" alt="Барбершоп «Бородинский»">
-
-    <!-- Преимущества -->
-    <section class="advantages">
-      <h2 class="visually-hidden">Преимущества</h2>
-      <ul class="advantages-list">
-        <li class="advantages-item">
-          <h3 class="advantages-title">Быстро</h3>
-          <p class="advantages-description">Мы делаем свою работу быстро! Два часа пролетят незаметно и вы — счастливый обладатель стильной стрижки-минутки!</p>
-        </li>
-        <li class="advantages-item">
-          <h3 class="advantages-title">Круто</h3>
-          <p class="advantages-description">Забудьте, как вы стриглись раньше. Мы сделаем из вас звезду футбола или кино! Во всяком случае внешне.</p>
-        </li>
-        <li class="advantages-item">
-          <h3 class="advantages-title">Дорого</h3>
-          <p class="advantages-description">Наши мастера — профессионалы своего дела и не могут стоить дешево. к тому же, разве цена не дает определенный статус?</p>
-        </li>
-      </ul>
-    </section>
-
-    <div class="index-columns">
-
-      <!-- Популярные услуги -->
-      <section class="services">
-        <h2 class="services-title">Популярные услуги</h2>
-        <ul class="services-list">
-          <li class="services-item">
-            Стрижка машинкой <b class="services-price">800 ₽</b>
-          </li>
-          <li class="services-item">
-            Стрижка усов <b class="services-price">1200 ₽</b>
-          </li>
-          <li class="services-item">
-            Груминг <b class="services-price">400 ₽</b>
-          </li>
-          <li class="services-item">
-            Комплексная стрижка <b class="services-price">2300 ₽</b>
-          </li>
-        </ul>
-        <a class="button button-all" href="#">Посмотреть все</a>
-      </section>
-
-      <!-- Фотогалерея -->
-      <section class="gallery">
-        <h2 class="gallery-title">Фотогалерея</h2>
-
-        <div class="slider">
-          <div class="slider-wrapper">
-            <img class="slider-image" src="images/gallery-1.jpg" alt="Примеры работ" width="390" height="250">
-            <div class="slider-controls">
-              <button class="slider-button slider-next" type="button">
-                <span class="visually-hidden">Предыдущее фото</span>
-              </button>
-              <button class="slider-button slider-prev" type="button">
-                <span class="visually-hidden">Следующее фото</span>
-              </button>
-            </div>
-
-            <ol class="slider-division">
-              <li class="slider-division-item">
-                <button class="slider-division-button slider-division-button-current" type="button">
-                  <span class="visually-hidden">1 фото</span>
-                </button>
-              </li>
-              <li class="slider-division-item">
-                <button class="slider-division-button" type="button">
-                  <span class="visually-hidden">2 фото</span>
-                </button>
-              </li>
-              <li class="slider-division-item">
-                <button class="slider-division-button" type="button">
-                  <span class="visually-hidden">3 фото</span>
-                </button>
-              </li>
-              <li class="slider-division-item">
-                <button class="slider-division-button" type="button">
-                  <span class="visually-hidden">4 фото</span>
-                </button>
-              </li>
-            </ol>
-          </div>
-        </div>
-      </section>
-    </div>
-
-    <div class="index-columns">
-
-      <!-- Контакты -->
-      <section class="contacts">
-        <h2 class="contacts-title">Контакты</h2>
-        <h3 class="contacts-subtitle">Барбершоп «Бородинский»</h3>
-        <address class="contacts-address">
-          <p class="contacts-address-text">Санкт-Петербург, набережная реки Карповки, 5, литера П.</p>
-          <a class="contacts-phone" href="tel:+78005558628">+7 800 555-86-28</a>
-        </address>
-        <h3 class="contacts-subtitle">Время работы</h3>
-        <ul class="contacts-schedule">
-          <li class="contacts-schedule-item">пн—пт: с 10:00 до 22:00</li>
-          <li class="contacts-schedule-item">сб—вс: с 10:00 до 19:00</li>
-        </ul>
-        <p class="contacts-navigation">
-          <a class="button" href="#">Как проехать</a>
-          <a class="button button-feedback" href="#">Обратная связь</a>
-        </p>
-      </section>
-
-      <!-- Форма записи -->
-      <section class="appointment">
-        <h2 class="appointment-title">Записаться</h2>
-        <p class="appointment-info">Укажите желаемую дату и время и мы свяжемся с вами для подтверждения брони.</p>
-        <form class="appointment-form" action="https://echo.htmlacademy.ru/" method="post">
-          <p class="field-group appointment-form-date">
-            <label class="form-label" for="appointment-date">
-              Дата
-
-            </label>
-            <input type="text" id="appointment-date" name="appointment-date" placeholder="01.01.2020">
-          </p>
-          <p class="field-group appointment-form-time">
-            <label class="form-label" for="appointment-time">
-              Время
-
-            </label>
-            <input type="text" id="appointment-time" name="appointment-time" placeholder="10:00">
-          </p>
-          <p class="field-group appointment-form-phone">
-            <label class="form-label" for="appointment-phone">
-              Телефон
-            </label>
-            <input class="field" type="text" id="appointment-phone" name="appointment-phone" placeholder="+7 800 000-00-00">
-          </p>
-          <p class="field-group appointment-form-name">
-            <label class="form-label" for="appointment-name">
-              Ваше имя
-            </label>
-            <input class="field" type="text" id="appointment-name" name="appointment-name">
-          </p>
-          <button class="button appointment-submit" type="submit">Записаться</button>
-        </form>
-      </section>
-    </div>
+<!-- Контейнер для модального окна -->
+<div class="modal-overlay">
+  <div class="modal-content">
+      <img class="modal-image" src="" alt="Увеличенное изображение">
+      <button class="modal-close-button" aria-label="Закрыть модальное окно">&times;</button>
   </div>
-</main>
+</div>
 
-<!-- Подвал -->
-<footer class="page-footer">
-  <div class="page-footer-container">
-    <section class="footer-contacts">
-      <h2 class="visually-hidden">Контакты</h2>
-      <img class="footer-contacts-logo" src="images/logo-footer.svg" width="183" height="21" alt="Логотип Барбершоп «Бородинский»">
-      <address class="footer-contacts-address">
-        <p class="footer-about-text">Санкт-Петербург, набережная реки Карповки, 5, литера П.</p>
-        <a class="footer-contacts-address-phone" href="tel:+78005558628">+7 800 555-86-28</a>
-      </address>
-      <a class="footer-contacts-map-link" href="#">Как нас найти?</a>
-    </section>
-    <section class="newsletter">
-      <h2 class="page-footer-title">Получайте лучшие предложения</h2>
-      <form class="newsletter-form" action="https://echo.htmlacademy.ru/" method="post">
+/* Modal */
+/* Стили для модального окна */
+/* Стили для модального окна */
+.modal-overlay {
+  display: none; /* Скрыто по умолчанию */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8); /* Полупрозрачный черный фон */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Поверх всех элементов */
+}
 
-          <label class="visually-hidden" for="newsletter-email">Email</label>
-          <input class="field"  placeholder="email@example.com" type="email" name="newsletter-email" id="newsletter-email" required>
+.modal-overlay.active {
+  display: flex; /* Показываем модальное окно */
+}
 
-        <button class="button newsletter-button" type="submit">
-          <span class="visually-hidden">Отправить</span>
-        </button>
-      </form>
-    </section>
-    <section class="footer-social">
-      <h2 class="page-footer-title">Давайте дружить</h2>
-      <ul class="footer-social-list">
-        <li class="footer-social-item">
-          <a class="footer-social-link footer-social-tw" href="#">
-            <span class="visually-hidden">Твиттер</span>
-          </a>
-        </li>
-        <li class="footer-social-item">
-          <a class="footer-social-link footer-social-vk" href="#">
-            <span class="visually-hidden">ВКонтакте</span>
-          </a>
-        </li>
-        <li class="footer-social-item">
-          <a class="footer-social-link footer-social-instagram" href="#">
-            <span class="visually-hidden">Инстаграм</span>
-          </a>
-        </li>
-      </ul>
-      <p>Сделано в <a class="htmlacademy-link" href="https://htmlacademy.ru/">.html academy</a></p>
-    </section>
-  </div>
-</footer>
-</body>
-</html>
+.modal-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.modal-image {
+  max-width: 100%;
+  max-height: 80vh; /* Ограничиваем высоту изображения */
+  border-radius: 10px;
+}
+
+.modal-close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #000;
+  cursor: pointer;
+  padding: 5px;
+  line-height: 1;
+}
+
+.modal-close-button:hover {
+  color: #ff0000; /* Изменяем цвет при наведении */
+}
+
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Данные для слайдера
+  const images = [
+    "images/gallery-1.jpg",
+    "images/gallery-2.jpg",
+    "images/gallery-3.jpg",
+    "images/gallery-4.jpg",
+  ];
+
+  // Элементы слайдера
+  const sliderImage = document.querySelector(".slider-image");
+  const prevButton = document.querySelector(".slider-prev");
+  const nextButton = document.querySelector(".slider-next");
+  const divisionButtons = document.querySelectorAll(".slider-division-button");
+
+  // Элементы модального окна
+  const modalOverlay = document.querySelector(".modal-overlay");
+  const modalImage = document.querySelector(".modal-image");
+  const modalCloseButton = document.querySelector(".modal-close-button");
+
+  let currentIndex = 0;
+
+  // Функция для обновления слайдера
+  function updateSlider() {
+    sliderImage.src = images[currentIndex];
+    divisionButtons.forEach((button, index) => {
+      button.classList.toggle(
+        "slider-division-button-current",
+        index === currentIndex
+      );
+    });
+  }
+
+  // Переключение на предыдущее изображение
+  prevButton.addEventListener("click", function () {
+    currentIndex = currentIndex > 0 ? currentIndex - 1 : images.length - 1;
+    updateSlider();
+  });
+
+  // Переключение на следующее изображение
+  nextButton.addEventListener("click", function () {
+    currentIndex = currentIndex < images.length - 1 ? currentIndex + 1 : 0;
+    updateSlider();
+  });
+
+  // Переключение по кнопкам внизу слайдера
+  divisionButtons.forEach((button, index) => {
+    button.addEventListener("click", function () {
+      currentIndex = index;
+      updateSlider();
+    });
+  });
+
+  // Инициализация слайдера
+  updateSlider();
+
+  // Функция для открытия модального окна
+  function openModal() {
+    modalImage.src = images[currentIndex]; // Устанавливаем текущее изображение в модальное окно
+    modalOverlay.classList.add("active"); // Показываем модальное окно
+
+    // Добавляем слушатели событий при открытии модального окна
+    modalCloseButton.addEventListener("click", closeModal);
+    modalOverlay.addEventListener("click", handleOutsideClick);
+    document.addEventListener("keydown", handleEscapeKey);
+  }
+
+  // Функция для закрытия модального окна
+  function closeModal() {
+    modalOverlay.classList.remove("active"); // Скрываем модальное окно
+
+    // Удаляем слушатели событий при закрытии модального окна
+    modalCloseButton.removeEventListener("click", closeModal);
+    modalOverlay.removeEventListener("click", handleOutsideClick);
+    document.removeEventListener("keydown", handleEscapeKey);
+  }
+
+  // Обработчик клика за пределами изображения
+  function handleOutsideClick(event) {
+    if (event.target === modalOverlay) {
+      closeModal(); // Закрываем модальное окно
+    }
+  }
+
+  // Обработчик нажатия клавиши Escape
+  function handleEscapeKey(event) {
+    if (event.key === "Escape") {
+      closeModal(); // Закрываем модальное окно
+    }
+  }
+
+  // Открытие модального окна при клике на изображение слайдера
+  sliderImage.addEventListener("click", openModal);
+});
