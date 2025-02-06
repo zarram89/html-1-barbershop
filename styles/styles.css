@@ -84,6 +84,23 @@ body {
   cursor: pointer;
 }
 
+/* Light */
+.button-light,
+.button-current {
+  color: #242424;
+  background-color: #ffffff;
+}
+
+/* Next */
+.button-all,
+.button-next {
+  padding-right: 44px;
+  background-image: url("../images/arrow-right.svg");
+  background-repeat: no-repeat;
+  background-size: 16px 16px;
+  background-position: center right 20px;
+}
+
 .button:hover,
 .footer-social-link:hover {
   background-color: #814b18;
@@ -95,11 +112,14 @@ body {
   background-color: #4e2e0e;
 }
 
+.button-disabled,
 .button:disabled {
   color: #e7e7e7;
   background-color: #595959;
 }
 
+.button-disabled:focus,
+.button-disabled:hover,
 .button:disabled:hover {
   background-color: #595959;
   outline: none;
@@ -110,28 +130,28 @@ body {
   margin-left: 16px;
 }
 
-.button-all{
-  padding-right: 44px;
-  background-image: url("../images/arrow-right.svg");
-  background-repeat: no-repeat;
-  background-size: 16px 16px;
-  background-position: center right 20px;
-}
-
-
 /* Light */
-.button-feedback {
-  color: #242424;
+.button-feedback,
+.button-current {
+  color: #000000;
   background-color: #ffffff;
 }
 
-.button-feedback:hover {
+.button-feedback:hover,
+.button-current:hover {
   background-color: #dbb590;
 }
 
-.button-feedback:focus {
+.button-feedback:focus,
+.button-current:focus {
   outline: 2px solid #af7842;
   background-color: #dbb590;
+}
+
+.button-feedback.button-disabled,
+.button-current.button-disabled {
+  color: #e7e7e7;
+  background-color: #595959;
 }
 
 /* Pages */
@@ -215,8 +235,14 @@ body {
 }
 
 .navigation-user {
-  max-width: 210px;
+  width: auto;
   margin-left: auto;
+  max-width: 210px;
+}
+
+.navigation-user .navigation-link {
+  min-width: 16px;
+  min-height: 22px;
 }
 
 .navigation-link-login {
@@ -224,15 +250,10 @@ body {
 }
 
 .navigation-link-login .navigation-icon {
+  position: absolute;
   right: auto;
   left: 20px;
   margin: auto 0;
-}
-
-
-.navigation-user .navigation-link {
-  min-width: 16px;
-  min-height: 22px;
 }
 
 .main-container {
@@ -371,13 +392,16 @@ body {
   margin: 0;
   margin-bottom: 30px;
   padding: 0;
+  font-family: "PT Sans Narrow", sans-serif;
   font-size: 20px;
   line-height: 28px;
   font-weight: 700;
   list-style-type: none;
 }
 
+/* Item */
 .services-item {
+  position: relative;
   display: flex;
   align-items: baseline;
   justify-content: space-between;
@@ -413,10 +437,92 @@ body {
   text-transform: uppercase;
 }
 
+.slider-image {
+  display: block;
+}
+
+.slider-wrapper {
+  position: relative;
+}
+
+.slider-image {
+  display: block;
+}
+
+.slider-controls {
+  position: absolute;
+  top: 50%;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  transform: translateY(-50%);
+}
+
+.slider-button {
+  width: 48px;
+  height: 60px;
+  color: #ffffff;
+  background-color: #000000;
+  border: none;
+  cursor: pointer;
+  background-image: url("../images/arrow.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.slider-button:hover {
+  background-color: #814b18;
+}
+
+.slider-button:focus {
+  outline: 2px solid #dbb590;
+  background-color: #4e2e0e;
+}
+
+.slider-prev {
+  transform: rotate(180deg);
+}
+
+.slider-division {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.slider-division-item {
+  margin: 0 4px;
+}
+
+.slider-division-button {
+  width: 8px;
+  height: 8px;
+  margin: 0;
+  padding: 0;
+  background-color: #dbdbdb;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.slider-division-button:hover {
+  background-color: #af7842;
+}
+
+.slider-division-button:focus {
+  background-color: #dbb590;
+  outline: none;
+}
+
+.slider-division-button-current {
+  background-color: #242424;
+}
+
 .contacts {
   width: 350px;
   font-weight: 700;
-
 }
 
 /* Title */
@@ -472,7 +578,6 @@ body {
   width: 430px;
 }
 
-
 /* Title */
 .appointment-title {
   margin-top: 0;
@@ -482,6 +587,27 @@ body {
   line-height: 35px;
   font-weight: 700;
   text-transform: uppercase;
+}
+
+.appointment-form {
+  display: grid;
+  grid-template-columns: 114px 74px 208px;
+  grid-gap: 19px 17px;
+}
+
+.field-group {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
+.appointment-form-name {
+  grid-column: 1 / -1;
+}
+
+.appointment-submit {
+  grid-column: 1 / -1;
+  justify-self: start;
 }
 
 /* List */
@@ -514,6 +640,17 @@ body {
   padding: 40px 0;
 }
 
+.footer-contacts-logo {
+  display: block;
+  margin-bottom: 24px;
+}
+
+
+.footer-about-text {
+  margin-top: 0;
+  margin-bottom: 4px;
+}
+
 .page-footer a {
   color: #ffffff;
 }
@@ -537,16 +674,6 @@ body {
 .footer-contacts {
   width: 200px;
   margin-right: 130px;
-}
-
-.footer-contacts-logo {
-  display: block;
-  margin-bottom: 24px;
-}
-
-.footer-about-text {
-  margin-top: 0;
-  margin-bottom: 4px;
 }
 
 .footer-contacts-address {
@@ -593,14 +720,9 @@ body {
   background-size: 16px 16px;
 }
 
-
 .footer-social {
   margin-left: auto;
   max-width: 190px;
-}
-
-.footer-social p {
-  margin: 0;
 }
 
 .footer-social-list {
@@ -612,7 +734,6 @@ body {
   list-style-type: none;
 }
 
-
 .footer-social-item {
   width: 56px;
   height: 44px;
@@ -623,6 +744,8 @@ body {
 .footer-social-item:nth-child(3n) {
   margin-right: 0;
 }
+
+/* Social */
 
 .footer-social-link {
   display: block;
@@ -643,6 +766,10 @@ body {
 
 .footer-social-instagram {
   background-image: url("../images/social-instagram.svg");
+}
+
+.footer-social p {
+  margin: 0;
 }
 
 .inner-header {
@@ -666,10 +793,7 @@ body {
   list-style-type: none;
 }
 
-/* Link */
- .breadcrumbs-link {
-  color: inherit;
-}
+/* Item */
 .breadcrumbs-item {
   position: relative;
   margin-right: 32px;
@@ -689,6 +813,11 @@ body {
 
 .breadcrumbs-item:last-child::after {
   content: none;
+}
+
+/* Link */
+.breadcrumbs-link {
+  color: inherit;
 }
 
 .catalog-products {
@@ -726,11 +855,7 @@ body {
   background-color: #ffffff;
 }
 
-.sorting-type {
-  margin-right: auto;
-}
-
-.card-grid-toggle{
+.card-grid-toggle {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -748,15 +873,14 @@ body {
   background-color: #4e2e0e;
 }
 
-.card-grid-toggle svg {
-  fill: #ffffff;
-}
-
 .card-grid-toggle:hover svg,
 .card-grid-toggle:focus svg {
   fill: #ffffff;
 }
 
+.card-grid-toggle svg {
+  fill: #ffffff;
+}
 
 .card-grid-toggle-current {
   background-color: #ffffff;
@@ -873,11 +997,6 @@ body {
 .pagination-current {
   color: #242424;
   background-color: #ffffff;
-}
-
-.pagination-prev,
-.pagination-next {
-  position: relative;
 }
 
 .pagination-prev {
