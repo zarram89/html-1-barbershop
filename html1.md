@@ -476,3 +476,45 @@ SVG гораздо больше, чем просто формат графики
 
 О формах
 https://htmlacademy.ru/blog/html/form-template
+
+Не забываем про состояния блоков, чтобы понимать, с каким полем взаимодействует пользователь с клавиатуры.
+
+Пропишем состояния:
+
+:hover
+:focus
+:disabled
+:invalid
+Не забудем прописать оформление для блока :placeholder
+
+* Hover, Focus */
+.field:hover,
+.field:focus {
+  border-color: #af7842;
+}
+
+.field:focus {
+  outline: 2px solid #dbb590;
+}
+
+/* Disabled */
+.field:disabled,
+.field:disabled:hover {
+  color: #595959;
+  background-color: #dbb590;
+  border-color: #595959;
+}
+
+/* Invalid */
+.field:invalid {
+  box-shadow: none;
+}
+
+.field:focus:invalid {
+  border-color: #ea5454;
+}
+
+/* Placeholder */
+.field::placeholder {
+  color: #dbdbdb;
+  opacity: 1;
