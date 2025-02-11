@@ -584,6 +584,7 @@ https://htmlacademy.ru/blog/html/form-template
 }
 ```
 
+Мякий перенос &shy;
 
 
 
