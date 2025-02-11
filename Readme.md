@@ -583,3 +583,180 @@ https://htmlacademy.ru/blog/html/form-template
   transition: 0.3s;
 }
 ```
+
+
+
+
+
+
+
+
+
+
+## Разметка, стили и скрипты для интерактивных элементов
+
+    <meta charset="utf-8">
+    <title>Главная страница</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/styles.css">
+
+<!-- Контейнер для модального окна -->
+<div class="modal-overlay">
+  <div class="modal-content">
+      <img class="modal-image" src="" alt="Увеличенное изображение">
+      <button class="modal-close-button" aria-label="Закрыть модальное окно">&times;</button>
+  </div>
+</div>
+
+/* Modal */
+/* Стили для модального окна */
+/* Стили для модального окна */
+.modal-overlay {
+  display: none; /* Скрыто по умолчанию */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8); /* Полупрозрачный черный фон */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Поверх всех элементов */
+}
+
+.modal-overlay.active {
+  display: flex; /* Показываем модальное окно */
+}
+
+.modal-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.modal-image {
+  max-width: 100%;
+  max-height: 80vh; /* Ограничиваем высоту изображения */
+  border-radius: 10px;
+}
+
+.modal-close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #000;
+  cursor: pointer;
+  padding: 5px;
+  line-height: 1;
+}
+
+.modal-close-button:hover {
+  color: #ff0000; /* Изменяем цвет при наведении */
+}
+
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Данные для слайдера
+  const images = [
+    "images/gallery-1.jpg",
+    "images/gallery-2.jpg",
+    "images/gallery-3.jpg",
+    "images/gallery-4.jpg",
+  ];
+
+  // Элементы слайдера
+  const sliderImage = document.querySelector(".slider-image");
+  const prevButton = document.querySelector(".slider-prev");
+  const nextButton = document.querySelector(".slider-next");
+  const divisionButtons = document.querySelectorAll(".slider-division-button");
+
+  // Элементы модального окна
+  const modalOverlay = document.querySelector(".modal-overlay");
+  const modalImage = document.querySelector(".modal-image");
+  const modalCloseButton = document.querySelector(".modal-close-button");
+
+  let currentIndex = 0;
+
+  // Функция для обновления слайдера
+  function updateSlider() {
+    sliderImage.src = images[currentIndex];
+    divisionButtons.forEach((button, index) => {
+      button.classList.toggle(
+        "slider-division-button-current",
+        index === currentIndex
+      );
+    });
+  }
+
+  // Переключение на предыдущее изображение
+  prevButton.addEventListener("click", function () {
+    currentIndex = currentIndex > 0 ? currentIndex - 1 : images.length - 1;
+    updateSlider();
+  });
+
+  // Переключение на следующее изображение
+  nextButton.addEventListener("click", function () {
+    currentIndex = currentIndex < images.length - 1 ? currentIndex + 1 : 0;
+    updateSlider();
+  });
+
+  // Переключение по кнопкам внизу слайдера
+  divisionButtons.forEach((button, index) => {
+    button.addEventListener("click", function () {
+      currentIndex = index;
+      updateSlider();
+    });
+  });
+
+  // Инициализация слайдера
+  updateSlider();
+
+  // Функция для открытия модального окна
+  function openModal() {
+    modalImage.src = images[currentIndex]; // Устанавливаем текущее изображение в модальное окно
+    modalOverlay.classList.add("active"); // Показываем модальное окно
+
+    // Добавляем слушатели событий при открытии модального окна
+    modalCloseButton.addEventListener("click", closeModal);
+    modalOverlay.addEventListener("click", handleOutsideClick);
+    document.addEventListener("keydown", handleEscapeKey);
+  }
+
+  // Функция для закрытия модального окна
+  function closeModal() {
+    modalOverlay.classList.remove("active"); // Скрываем модальное окно
+
+    // Удаляем слушатели событий при закрытии модального окна
+    modalCloseButton.removeEventListener("click", closeModal);
+    modalOverlay.removeEventListener("click", handleOutsideClick);
+    document.removeEventListener("keydown", handleEscapeKey);
+  }
+
+  // Обработчик клика за пределами изображения
+  function handleOutsideClick(event) {
+    if (event.target === modalOverlay) {
+      closeModal(); // Закрываем модальное окно
+    }
+  }
+
+  // Обработчик нажатия клавиши Escape
+  function handleEscapeKey(event) {
+    if (event.key === "Escape") {
+      closeModal(); // Закрываем модальное окно
+    }
+  }
+
+  // Открытие модального окна при клике на изображение слайдера
+  sliderImage.addEventListener("click", openModal);
+});
