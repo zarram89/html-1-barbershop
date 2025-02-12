@@ -26,52 +26,52 @@ HTML-коды популярных эмодзи - https://htmlacademy.ru/blog/ht
 
 Скриншоты
 Win11
-PrtSc - скриншот
-Windows + V - буфер обмена
+`PrtSc` - скриншот
+`Windows + V` - буфер обмена
 
 Linux
-Shift + PrtScr - скриншот
-Ctrl + Shift + PrtScr - чтобы не сохранить скриншот, а скопировать его в буфер обмена
+`Shift + PrtScr` - скриншот
+`Ctrl + Shift + PrtScr` - чтобы не сохранить скриншот, а скопировать его в буфер обмена
 
 macOS
-Command + Shift + 3 - скриншот рабочего стола
-Command + Shift + 4 - часть экрана
+`Command + Shift + 3` - скриншот рабочего стола
+`Command + Shift + 4` - часть экрана
 
 Горячие клавиши VSCode
-! и Tab - добавить разметку
-Windows — Ctrl + / - быстро добавить комментарий
-macOS — Command + /
+`!` и `Tab` - добавить разметку
+Windows — `Ctrl + /` - быстро добавить комментарий
+macOS — `Command + /`
 
-Windows — Ctrl + G - перейти к строке под номером
-macOS — Control + G
+Windows — `Ctrl + G` - перейти к строке под номером
+macOS — `Control + G`
 
-Windows — Alt + ↑ / ↓ - поменять строку местами с соседними
-macOS  Option + ↑ / ↓
+`Windows — Alt + ↑ / ↓` - поменять строку местами с соседними
+macOS  `Option + ↑ / ↓`
 
-Windows  Shift + Alt + ↓ / ↑ - дублировать строку
-macOS  Shift + Option + ↓ / ↑
+Windows  `Shift + Alt + ↓ / ↑` - дублировать строку
+macOS  `Shift + Option + ↓ / ↑`
 
-Windows  Ctrl + Shift + \ - перейти к парной скобке
-macOS  Shift + Command + \
+Windows  `Ctrl + Shift + \` - перейти к парной скобке
+macOS  `Shift + Command + \`
 
-Windows — F2 - переименовать переменную
-macOS — F2
+Windows — `F2` - переименовать переменную
+macOS — `F2`
 
-Windows — Shift + Alt + F - отформатировать документ
-macOS  Shift + Option + F
+Windows — `Shift + Alt + F` - отформатировать документ
+macOS  `Shift + Option + F`
 
-Windows — F12 - перейти к переменной
-macOS — F12
+Windows — `F12` - перейти к переменной
+macOS — `F12`
 
-Windows — Alt + Z - включить или выключить перенос слов
-macOS — Option + Z
+Windows — `Alt + Z` - включить или выключить перенос слов
+macOS — `Option + Z`
 
-Windows — Ctrl + KZ - включить дзен-режим
-macOS — Command + KZ
-Escape - чтобы выйти
+Windows — `Ctrl + KZ` - включить дзен-режим
+macOS — `Command + KZ`
+`Escape` - чтобы выйти
 
 Плагины
-HTML Preview - CTR+K V в Windows или Cmd+K V в OS X
+HTML Preview - `CTR+K V` в Windows или `Cmd+K V` в OS X
 
 При отправке данных мультиселекта на сервер с PHP после имени в значении атрибута name ставятся символы квадратных скобок []. Например, <select name="days[]">. Это необязательное требование для имени мультиселекта, а нужно только для корректной обработки данных в PHP.
 
