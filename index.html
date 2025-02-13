@@ -41,8 +41,9 @@
               </svg>
               <span class="visually-hidden">Корзина</span>
             </a>
+
             <div class="popover popover-cart">
-              <button class="popover-close-button button button-light">
+              <button class="popover-close-button button button-light" type="button">
                 2
                 <span class="visually-hidden">Закрыть</span>
               </button>
@@ -52,7 +53,7 @@
                   <li class="cart-item">
                     <p class="cart-item-title">Стрижка машинкой</p>
                     <p class="cart-item-price">800 ₽</p>
-                    <button type="button" class="cart-item-button button">
+                    <button class="cart-item-button button" type="button">
                       <svg width="16" height="16" fill="#fff" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M3.42 1l.283-.496L3.991 0H12.01l.288.504.283.496h3.049l-.136 1.12-1.577 13-.107.88H2.191l-.107-.88-1.577-13L.371 1H3.42zm.543 13L2.629 3H13.37l-1.334 11H3.963zm5.04-9.071l-.5 7 1.995.142.5-7-1.995-.142zm-3.5 7.142l-.5-7 1.994-.142.5 7-1.994.142z" />
                       </svg>
@@ -103,7 +104,7 @@
             </li>
             <li class="advantages-item">
               <h3 class="advantages-title">Круто</h3>
-              <p class="advantages-description">Забудьте, как вы стриглись раньше. Мы сделаем из вас звезду футбола или кино! Во всяком случае внешне.</p>
+              <p class="advantages-description">Забудьте, как вы стриглись раньше.<br> Мы сделаем из вас звезду футбола или кино!<br> Во всяком случае внешне.</p>
             </li>
             <li class="advantages-item">
               <h3 class="advantages-title">Дорого</h3>
@@ -137,7 +138,6 @@
           <!-- Фотогалерея -->
           <section class="gallery">
             <h2 class="gallery-title">Фотогалерея</h2>
-
             <div class="slider">
               <div class="slider-wrapper">
                 <img class="slider-image" src="images/gallery-1.jpg" alt="Примеры работ" width="390" height="250">
@@ -149,30 +149,30 @@
                     <span class="visually-hidden">Следующее фото</span>
                   </button>
                 </div>
-
-                <ol class="slider-division">
-                  <li class="slider-division-item">
-                    <button class="slider-division-button slider-division-button-current" type="button">
-                      <span class="visually-hidden">1 фото</span>
-                    </button>
-                  </li>
-                  <li class="slider-division-item">
-                    <button class="slider-division-button" type="button">
-                      <span class="visually-hidden">2 фото</span>
-                    </button>
-                  </li>
-                  <li class="slider-division-item">
-                    <button class="slider-division-button" type="button">
-                      <span class="visually-hidden">3 фото</span>
-                    </button>
-                  </li>
-                  <li class="slider-division-item">
-                    <button class="slider-division-button" type="button">
-                      <span class="visually-hidden">4 фото</span>
-                    </button>
-                  </li>
-                </ol>
               </div>
+
+              <ol class="slider-division">
+                <li class="slider-division-item">
+                  <button class="slider-division-button slider-division-button-current">
+                    <span class="visually-hidden">1 фото</span>
+                  </button>
+                </li>
+                <li class="slider-division-item">
+                  <button class="slider-division-button" type="button">
+                    <span class="visually-hidden">2 фото</span>
+                  </button>
+                </li>
+                <li class="slider-division-item">
+                  <button class="slider-division-button" type="button">
+                    <span class="visually-hidden">3 фото</span>
+                  </button>
+                </li>
+                <li class="slider-division-item">
+                  <button class="slider-division-button" type="button">
+                    <span class="visually-hidden">4 фото</span>
+                  </button>
+                </li>
+              </ol>
             </div>
           </section>
         </div>
@@ -204,17 +204,32 @@
             <p class="appointment-info">Укажите желаемую дату и время и мы свяжемся с вами для подтверждения брони.</p>
             <form class="appointment-form" action="https://echo.htmlacademy.ru/" method="post">
               <p class="field-group appointment-form-date">
-
-                <label class="form-label" for="appointment-date">
-                  Дата</label>
-
+                <span class="form-label form-label-icon">
+                  <label class="form-label" for="appointment-date">Дата</label>
+                  <span class="tooltip">
+                    <button class="tooltip-toggle" type="button" aria-labelledby="tooltip-label-date">
+                      <svg class="tooltip-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor">
+                        <path d="M8 14A6 6 0 108 2a6 6 0 000 12zm1.27-8.73a1.27 1.27 0 11-2.54 0 1.27 1.27 0 012.54 0zm0 2.23V11H6.73V7.5h2.54z" />
+                      </svg>
+                    </button>
+                    <span class="tooltip-text" role="tooltip" id="tooltip-label-date">Укажите желаемую дату и время и мы свяжемся с вами для подтверждения брони</span>
+                  </span>
+                </span>
                 <input class="field" type="text" id="appointment-date" name="appointment-date" placeholder="01.01.2020">
               </p>
               <p class="field-group appointment-form-time">
-
-                <label class="form-label" for="appointment-time">
-                  Время</label>
-
+                <span class="form-label form-label-icon">
+                  <label class="form-label" for="appointment-time">Время</label>
+                  <span class="tooltip">
+                    <button class="tooltip-toggle" type="button" aria-labelledby="tooltip-label-time">
+                      <svg class="tooltip-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor">
+                        <path d="M8 14A6 6 0 108 2a6 6 0 000 12zm1.27-8.73a1.27 1.27 0 11-2.54 0 1.27 1.27 0 012.54 0zm0 2.23V11H6.73V7.5h2.54z" />
+                      </svg>
+                      <span class="visually-hidden">Посмотреть дополнительную информацию</span>
+                    </button>
+                    <span class="tooltip-text" role="tooltip" id="tooltip-label-time">Укажите желаемую дату и время и мы свяжемся с вами для подтверждения брони</span>
+                  </span>
+                </span>
                 <input class="field" type="text" id="appointment-time" name="appointment-time" placeholder="10:00">
               </p>
               <p class="field-group appointment-form-phone">
@@ -241,7 +256,7 @@
       <div class="page-footer-container">
         <section class="footer-contacts">
           <h2 class="visually-hidden">Контакты</h2>
-          <img class="footer-contacts-logo" src="images/logo-footer.svg" width="183" height="21" alt="Логотип Барбершоп «Бородинский»">
+          <img class="footer-contacts-logo" src="images/logo-footer.svg" width="187" height="24" alt="Логотип Барбершоп «Бородинский»">
           <address class="footer-contacts-address">
             <p class="footer-about-text">Санкт-Петербург, набережная реки Карповки, 5, литера П.</p>
             <a class="footer-contacts-address-phone" href="tel:+78005558628">+7 800 555-86-28</a>
@@ -251,10 +266,10 @@
         <section class="newsletter">
           <h2 class="page-footer-title">Получайте лучшие предложения</h2>
           <form class="newsletter-form" action="https://echo.htmlacademy.ru/" method="post">
-
-            <label class="visually-hidden" for="newsletter-email">Email</label>
-            <input class="field" placeholder="email@example.com" type="email" name="newsletter-email" id="newsletter-email" required>
-
+            <p class="newsletter-email field-group">
+              <label class="visually-hidden" for="newsletter-email">Email</label>
+              <input class="field" placeholder="email@example.com" type="email" name="newsletter-email" id="newsletter-email" required>
+            </p>
             <button class="button newsletter-button" type="submit">
               <span class="visually-hidden">Отправить</span>
             </button>
@@ -286,7 +301,7 @@
 
     <div class="modal-container modal-container-close">
       <div class="modal modal-auth">
-        <button class="modal-close-button">
+        <button class="modal-close-button" type="button">
           <span class="visually-hidden">Закрыть</span>
         </button>
         <section class="modal-content">
@@ -303,6 +318,7 @@
             <p class="field-group auth-form-user-options">
               <label class="auth-form-checkbox control">
                 <input class="visually-hidden control-input" type="checkbox" name="firm-storе">
+                <span class="control-mark"></span>
                 <span class="control-mark"></span>
                 <span class="control-label">Запомнить меня</span>
               </label>

@@ -73,8 +73,7 @@
         </header>
 
         <section class="catalog-products">
-          <!--временно добавим атрибут hidden, чтобы заголовок не рушил сетку-->
-          <h2 class="visually-hidden" hidden>Список товаров с фильтрами</h2>
+          <h2 class="visually-hidden">Список товаров с фильтрами</h2>
           <!-- Фильтрация -->
           <form class="catalog-filter" action="https://echo.htmlacademy.ru/" method="get">
             <fieldset class="catalog-filter-group">
@@ -83,10 +82,10 @@
               <div class="range">
                 <div class="range-scale">
                   <div class="range-bar" style="left: 42px; width: 136px">
-                    <button class="range-toggle toggle-min">
+                    <button class="range-toggle toggle-min" type="button">
                       <span class="visually-hidden">Изменить минимальную цену</span>
                     </button>
-                    <button class="range-toggle toggle-max">
+                    <button class="range-toggle toggle-max" type="button">
                       <span class="visually-hidden">Изменить максимальную цену</span>
                     </button>
                   </div>
@@ -94,7 +93,7 @@
 
                 <div class="range-wrapper-inputs">
                   <label class="catalog-filter-label">
-                    от <input class="range-input" type="number" value="450" name="min-price"> ₽
+                    от <input class="range-input" type="number" value="50" name="min-price"> ₽
                   </label>
                   <label class="catalog-filter-label">
                     до <input class="range-input" type="number" value="1500" name="max-price" style="width: 37px"> ₽
@@ -320,7 +319,7 @@
       <div class="page-footer-container">
         <section class="footer-contacts">
           <h2 class="visually-hidden">Контакты</h2>
-          <img class="footer-contacts-logo" src="images/logo-footer.svg" width="183" height="21" alt="Логотип Барбершоп «Бородинский»">
+          <img class="footer-contacts-logo" src="images/logo-footer.svg" width="187" height="24" alt="Логотип Барбершоп «Бородинский»">
           <address class="footer-contacts-address">
             <p class="footer-about-text">Санкт-Петербург, набережная реки Карповки, 5, литера П.</p>
             <a class="footer-contacts-address-phone" href="tel:+78005558628">+7 800 555-86-28</a>
